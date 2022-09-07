@@ -1,6 +1,7 @@
 import Input from "./Input";
 import logo from '../assets/logo.svg'
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
     return (
@@ -13,8 +14,10 @@ const LogIn = () => {
                     <Input type='password' placeholder='Password' />
                 </div>
                 <div className="flex flex-col gap-6">
-                    <Button value='Login to your account' />
-                    <p className="text-center hyphens-manual">Don’t have an account? &shy; <a href='./sign-up' className='text-mainRed whitespace-nowrap'>Sign Up</a>
+                    <Button>Login to your account</Button>
+                    <p className="text-center hyphens-manual">
+                        Don’t have an account? &shy;
+                        <Link to={'/sign-up'} className='text-mainRed whitespace-nowrap'>Sign Up</Link>
                     </p>
                 </div>
             </div>
