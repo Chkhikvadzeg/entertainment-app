@@ -1,21 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
+import Home from './components/Home';
+import Movies from './components/Movies';
+import Series from './components/Series';
+import Bookmark from './components/Bookmark';
 
 function App() {
   return (
-    <div className="w-screen min-h-screen font-light bg-darkBlue mx-auto px-6">
+    <div className="w-screen min-h-screen font-light  mx-auto px-6 py-8 h-screen">
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        {/* <img src={logo} alt="Logo" />
-        <div className="log-in">
-          <h1 className='log-in-heading'>Login</h1>
-          <div className="input-container">
-            <Input type="email" placeholder="Email address"></Input>
-            <Input type="password" placeholder="Password"></Input>
-          </div>
-        </div> */}
+        <Route path='/home' element={<Home />} />
+        <Route path='/movies' element={<Movies />} />
+        <Route path='/series' element={<Series />} />
+        <Route path='/bookmark' element={<Bookmark />} />
       </Routes>
     </div>
   );
