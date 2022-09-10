@@ -1,12 +1,11 @@
 import Input from "./Input";
-import logo from '../assets/logo.svg'
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
 const LogIn = () => {
     return (
         <div className="mx-auto max-w-[400px] py-20 flex flex-col items-center text-white">
-            <img src={logo} alt='logo' />
+            <img src={process.env.PUBLIC_URL + './assets/logo.svg'} alt='logo' />
             <div className="mt-14 p-6 flex w-full flex-col gap-10 rounded-[20px] bg-semiDarkBlue md:p-8 md:mt-10">
                 <h1 className="text-white text-[32px] leading-tight">Login</h1>
                 <div className="flex flex-col gap-6">

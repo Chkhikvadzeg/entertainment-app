@@ -1,10 +1,9 @@
 import Input from "./Input";
-import searchImg from '../assets/icon-search.svg'
 
 const SearchInput = ({ value, onChange, placeholder }) => {
     return (
         <div className="flex items-center justify-start w-full gap-6 sm:items-start">
-            <img src={searchImg} alt="Search" />
+            <img src={process.env.PUBLIC_URL + '/assets/icon-search.svg'} alt="Search" />
             <Input
                 type='search'
                 defaultValue={value}

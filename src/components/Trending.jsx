@@ -10,23 +10,18 @@ const Trending = (props) => {
             <h2 className="text-[32px] ">{props.title}</h2>
             <Splide
                 options={{
-                    rewind: true,
-
                     pagination: false,
                     type: 'loop',
                     fixedWidth: 470,
-                    autoHeight: true,
                     autoplay: true,
                     perMove: 1,
-                    interval: 3000,
+                    interval: 5000,
+                    cover: true,
                     arrows: false,
                     direction: 'ltr',
-                    drag: true,
-
+                    pauseOnFocus: true,
+                    pauseOnHover: true,
                     gap: 40,
-                    classes: {
-                        SplideSlide: 'flex items-center gap-10'
-                    },
                     breakpoints: {
                         768: {
                             fixedWidth: 240,
