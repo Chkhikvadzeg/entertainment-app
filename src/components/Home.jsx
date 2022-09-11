@@ -24,7 +24,7 @@ const Home = () => {
                         <RegularMovies data={data} condition={searchValue} title='Trending' /> :
                         (<>
                             <Trending data={data} title='Trending' />
-                            <RegularMovies data={data} condition={searchValue} title='Recommended for you' />
+                            <RegularMovies data={data} condition={searchValue.trim()} title='Recommended for you' />
                         </>)
                 }
             </div>

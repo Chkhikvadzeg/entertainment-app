@@ -27,7 +27,7 @@ const Movies = () => {
                         <RegularMovies data={filteredMovies} category="Movie" condition={searchValue} title='Trending' /> :
                         (<>
                             <Trending data={filteredTrendingMovies} title='Trending' />
-                            <RegularMovies data={filteredMovies} condition={searchValue} title='Movies' />
+                            <RegularMovies data={filteredMovies} condition={searchValue.trim()} title='Movies' />
                         </>)
                 }
             </div>

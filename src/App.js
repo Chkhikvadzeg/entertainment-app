@@ -8,7 +8,7 @@ import Bookmark from './components/Bookmark';
 
 function App() {
   return (
-    <div className="w-full container min-h-screen font-light text-white leading-tight mx-auto px-6 py-8 h-screen">
+    <div className="w-full container min-h-screen font-light text-white leading-tight mx-auto px-6 py-8 h-screen sm:p-10">
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route path='/sign-up' element={<SignUp />} />
