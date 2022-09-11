@@ -2,15 +2,30 @@ import Aside from "./Aside";
 import SearchInput from "./SearchInput";
 import Trending from './Trending';
 import RegularMovies from "./RegularMovies";
+import { useState } from "react";
 
 const Home = () => {
+
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleChange = (e) => {
+        setSearchValue(e.target.value);
+    }
+
+
     return (
         <div>
             <Aside path="Home" />
             <div className="mt-20 pb-[60px] sm:ml-[148px] sm:mt-8">
-                <SearchInput placeholder="Search for movies or TV series" />
-                <Trending title='Trending' />
-                <RegularMovies title='Recommended for you' />
+                <SearchInput value={searchValue} onChange={handleChange} placeholder="Search for movies or TV series" />
+                {
+                    searchValue.length > 0 ?
+                        <RegularMovies condition={searchValue} title='Recommended for you' /> :
+                        (<>
+                            <Trending title='Trending' />
+                            <RegularMovies condition={searchValue} title='Recommended for you' />
+                        </>)
+                }
             </div>
         </div>
     )
