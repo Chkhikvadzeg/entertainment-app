@@ -1,5 +1,4 @@
 import TrendingMovie from "./TrendingMovie";
-import data from '../data.json';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'
 
@@ -31,7 +30,7 @@ const Trending = (props) => {
                 }}
                 aria-label="Trending Movies"
             >
-                {data.filter(movie => movie.isTrending).map((movie, index) =>
+                {props.data.filter(movie => movie.isTrending).map((movie, index) =>
                     <SplideSlide key={index}>
                         <TrendingMovie movie={movie} />
                     </SplideSlide>

@@ -3,6 +3,7 @@ import SearchInput from "./SearchInput";
 import Trending from './Trending';
 import RegularMovies from "./RegularMovies";
 import { useState } from "react";
+import data from '../data.json';
 
 const Home = () => {
 
@@ -20,10 +21,10 @@ const Home = () => {
                 <SearchInput value={searchValue} onChange={handleChange} placeholder="Search for movies or TV series" />
                 {
                     searchValue.length > 0 ?
-                        <RegularMovies condition={searchValue} title='Recommended for you' /> :
+                        <RegularMovies data={data} condition={searchValue} title='Trending' /> :
                         (<>
-                            <Trending title='Trending' />
-                            <RegularMovies condition={searchValue} title='Recommended for you' />
+                            <Trending data={data} title='Trending' />
+                            <RegularMovies data={data} condition={searchValue} title='Recommended for you' />
                         </>)
                 }
             </div>
