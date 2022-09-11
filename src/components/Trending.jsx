@@ -19,6 +19,7 @@ const Trending = (props) => {
                     direction: 'ltr',
                     pauseOnFocus: true,
                     pauseOnHover: true,
+                    start: 2,
                     gap: 40,
                     breakpoints: {
                         768: {
