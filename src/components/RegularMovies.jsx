@@ -1,9 +1,7 @@
 import Regular from "./Regular";
-import data from '../data.json';
-let movies = [...data]
 
 const RegularMovies = (props) => {
-    let filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(props.condition.toLowerCase()));
+    let filteredMovies = props.data.filter(movie => movie.title.toLowerCase().includes(props.condition.toLowerCase()));
     return (
         <div className="mt-6 flex flex-col gap-6 sm:mt-10 ">
             <h2 className="text-[32px] ">
