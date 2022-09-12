@@ -9,7 +9,6 @@ const Trending = (props) => {
             <h2 className="text-[32px] ">{props.title}</h2>
             <Splide
                 options={{
-                    type: 'loop',
                     fixedWidth: 470,
                     autoplay: true,
                     perMove: 1,
