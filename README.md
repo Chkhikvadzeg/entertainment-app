@@ -1,5 +1,7 @@
 # Frontend Mentor - Entertainment web app
 
+
+
 ![Design preview for the Entertainment web app coding challenge](./src/assets/preview.jpg)
 
 ## Welcome! 👋
@@ -109,4 +111,4 @@ The more specific you are with your questions the more likely it is that another
 
 We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
 
-**Have fun building!** 🚀
+**Have fun building!** 
