@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import LogIn from './components/LogIn'
-import SignUp from './components/SignUp'
+// import LogIn from './components/LogIn'
+// import SignUp from './components/SignUp'
 import Home from './components/Home';
 import Movies from './components/Movies';
 import Series from './components/Series';
@@ -24,10 +24,10 @@ function App() {
   return (
     <UserContext.Provider value={value}>
       <div className="w-full min-h-screen font-light text-white leading-tight mx-auto px-6 py-8 h-screen sm:p-10">
-        <Routes>
-          <Route path='/' element={<LogIn />} />
-          <Route path='/sign-up' element={<SignUp />} />
-          <Route path='/home' element={<Home />} />
+        <Routes base>
+          {/* <Route path='/' element={<LogIn />} />
+          <Route path='/sign-up' element={<SignUp />} /> */}
+          <Route path='/' element={<Home />} />
           <Route path='/movies' element={<Movies />} />
           <Route path='/series' element={<Series />} />
           <Route path='/bookmark' element={<Bookmark />} />
