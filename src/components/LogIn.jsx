@@ -14,8 +14,8 @@ const LogIn = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                     <Button>Login to your account</Button>
-                    <p className="text-center hyphens-manual">
-                        Don’t have an account? &shy;
+                    <p className="text-center">
+                        Don’t have an account?
                         <Link to={'/sign-up'} className='text-mainRed whitespace-nowrap'>Sign Up</Link>
                     </p>
                 </div>

@@ -15,7 +15,7 @@ const LogIn = () => {
                 </div>
                 <div className="flex flex-col gap-6">
                     <Button>Create an account</Button>
-                    <p className="text-center hyphens-manual">Already have an account? &shy;
+                    <p className="text-center">Already have an account?
                         <Link to='/' className='text-mainRed whitespace-nowrap'>Login</Link>
                     </p>
                 </div>
