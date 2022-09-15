@@ -2,13 +2,16 @@ import Aside from "./Aside";
 import SearchInput from "./SearchInput";
 import Trending from './Trending';
 import RegularMovies from "./RegularMovies";
-import data from '../data.json';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../App";
 
-const filteredTrendingMovies = data.filter(movie => movie.isTrending && movie.category === "Movie");
-const filteredMovies = data.filter(movie => movie.category === "Movie");
+
 
 const Movies = () => {
+
+    const { movies } = useContext(UserContext);
+    const filteredTrendingMovies = movies.filter(movie => movie.isTrending && movie.category === "Movie");
+    const filteredMovies = movies.filter(movie => movie.category === "Movie");
 
     const [searchValue, setSearchValue] = useState('');
 

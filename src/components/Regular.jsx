@@ -1,21 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../App";
+
 
 const Regular = (props) => {
-    const [isBookmarked, setBookmark] = useState(props.movie.isBookmarked);
 
-    let clicked = false;
+    const { movies, setMovies } = useContext(UserContext);
+    let isBookmarked = props.movie.isBookmarked;
 
     const handleClick = () => {
-        clicked = true;
+        const movie = movies.findIndex(movie => movie.title === props.movie.title);
+        const newMovies = [...movies];
+        newMovies[movie].isBookmarked = !newMovies[movie].isBookmarked;
+        setMovies([...newMovies]);
     }
 
-    const changeState = () => {
-        if (!clicked) {
-            setBookmark(!isBookmarked);
-        } else {
-            clicked = false;
-        }
-    }
+
 
     let categoryIcon;
 
@@ -29,10 +28,10 @@ const Regular = (props) => {
     return (
 
         <div className="h-full w-auto shrink-0 rounded-lg  relative">
-            <img className='rounded-lg'
+            <img className='rounded-lg w-full'
                 src={process.env.PUBLIC_URL + props.movie.thumbnail.regular.large}
                 alt={props.movie.title} />
-            <div className='absolute cursor-pointer top-2 right-2 w-8 h-8 flex justify-center items-center rounded-full bg-darkBlue bg-opacity-50 sm:top-4 sm:right-6' onClick={handleClick} onMouseEnter={changeState} onMouseLeave={changeState}>
+            <div className='absolute cursor-pointer top-2 right-2 w-8 h-8 flex justify-center items-center rounded-full bg-darkBlue bg-opacity-50 sm:top-4 sm:right-6' onClick={handleClick} >
                 <img src={isBookmarked ? process.env.PUBLIC_URL + '/assets/icon-bookmark-full.svg' : process.env.PUBLIC_URL + '/assets/icon-bookmark-empty.svg'} alt={isBookmarked ? 'Bookmarked Icon' : 'Not Bookmarked Icon'} />
             </div>
             <div className='p-2 w-full flex flex-col gap-1'>
