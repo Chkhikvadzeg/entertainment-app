@@ -1,12 +1,9 @@
 import TrendingMovie from "./TrendingMovie";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'
-import { useContext } from "react";
-import { UserContext } from "../App";
 
 const Trending = (props) => {
 
-    const { movies } = useContext(UserContext);
 
 
     return (
@@ -43,7 +40,7 @@ const Trending = (props) => {
                 }}
                 aria-label="Trending Movies"
             >
-                {movies.filter(movie => movie.isTrending).map((movie, index) =>
+                {props.data.filter(movie => movie.isTrending).map((movie, index) =>
                     <SplideSlide key={index}>
                         <TrendingMovie movie={movie} />
                     </SplideSlide>

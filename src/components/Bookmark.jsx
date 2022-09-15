@@ -2,14 +2,19 @@ import Aside from "./Aside";
 import SearchInput from "./SearchInput";
 import Trending from './Trending';
 import RegularMovies from "./RegularMovies";
-import data from '../data.json';
 import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../App";
 
-const filteredTrendingMovies = data.filter(movie => movie.isTrending && movie.isBookmarked);
-const filteredMovies = data.filter(movie => movie.isBookmarked);
+
+
 
 const Bookmark = () => {
 
+    const { movies } = useContext(UserContext);
+    const filteredTrendingMovies = movies.filter(movie => movie.isTrending && movie.isBookmarked);
+    const filteredMovies = movies.filter(movie => movie.isBookmarked);
+    console.log(filteredMovies, movies);
     const [searchValue, setSearchValue] = useState('');
 
     const handleChange = (e) => {
